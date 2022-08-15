@@ -10,8 +10,9 @@ function createGrid(cellCount=64) {
 function createDivCell(cellNum) {  //returns a div
 
     const cell = document.createElement('div');
+    cell.classList.add(`${cellNum}`);
     cell.textContent = `${cellNum}`;
     return cell;
 }
 
-console.log(typeof createDivCell(1));
+console.log(createGrid(64));
