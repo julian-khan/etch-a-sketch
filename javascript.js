@@ -1,13 +1,13 @@
-function createGrid(dimension) { 
+function createGrid(cellCount=64) { 
     const gridWrapper = document.querySelector('.grid-wrapper');
 
-    for (let i = 1; i <= dimension, i++) { 
-        gridWrapper.appendChild(createDivCell(dimension));
+    for (let i = 1; i <= cellCount, i++) { 
+        gridWrapper.appendChild(createDivCell(i));
 }
 
-function createDivCell(dimension) {  //returns a div
+function createDivCell(cellNum) {  //returns a div
 
     const gridRow = document.createElement('div');
-    gridRow.textContent = `Row ${i}`;
+    gridRow.textContent = `${i}`;
     return gridRow;
 }
