@@ -18,8 +18,6 @@ function createGridTempColString(cellCount) {
     return outputString;
 }
 
-console.log(createGridTempColString(64));
-
 function createGrid(cellCount=64) { 
     const gridWrapper = document.querySelector('.grid-wrapper');
 
@@ -32,12 +30,23 @@ function createGrid(cellCount=64) {
 function createDivCell(cellNum) {  //returns a div
 
     const cell = document.createElement('div');
-    cell.classList.add(`${cellNum}`);
+    cell.classList.add('grid-cell', `${cellNum}`);
     cell.textContent = `${cellNum}`;
+    console.log(cell);
     return cell;
 }
 
-setGridWrapperSize(100);
+
+function colourCell(cell) {
+    
+
+}
+
+setGridWrapperSize(256);
+createGrid(256);
+
+const gridCells = document.querySelectorAll('');
+gridCells.forEach(cell, colourCell());
 
 
-createGrid(100);
+
