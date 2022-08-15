@@ -1,3 +1,18 @@
+
+function setGridWrapperSize(cellCount) {
+    const gridWrapper = document.querySelector('.grid-wrapper');
+
+    //gridWrapper.setAttribute("grid-template-columns", "1fr 1fr;");
+    const gridTempColStr = createGridTempColString(cellCount);
+    gridWrapper.style.gridTemplateColumns = `${gridTempColStr()}`;
+
+    console.log(gridWrapper);
+}
+
+function createGridTempColString(cellCount) {
+
+}
+
 function createGrid(cellCount=64) { 
     const gridWrapper = document.querySelector('.grid-wrapper');
 
@@ -14,5 +29,8 @@ function createDivCell(cellNum) {  //returns a div
     cell.textContent = `${cellNum}`;
     return cell;
 }
+
+setGridWrapperSize(64);
+
 
 console.log(createGrid(64));
