@@ -2,16 +2,23 @@
 function setGridWrapperSize(cellCount) {
     const gridWrapper = document.querySelector('.grid-wrapper');
 
-    //gridWrapper.setAttribute("grid-template-columns", "1fr 1fr;");
     const gridTempColStr = createGridTempColString(cellCount);
-    gridWrapper.style.gridTemplateColumns = `${gridTempColStr()}`;
-
-    console.log(gridWrapper);
+    gridWrapper.style.gridTemplateColumns = gridTempColStr;
 }
+
 
 function createGridTempColString(cellCount) {
 
+    const rowLength = Math.sqrt(cellCount);
+    let outputString = "";
+
+    for (i=0; i<= rowLength -1; i++) {
+        outputString += " 1fr";
+    }
+    return outputString;
 }
+
+console.log(createGridTempColString(64));
 
 function createGrid(cellCount=64) { 
     const gridWrapper = document.querySelector('.grid-wrapper');
@@ -30,7 +37,7 @@ function createDivCell(cellNum) {  //returns a div
     return cell;
 }
 
-setGridWrapperSize(64);
+setGridWrapperSize(100);
 
 
-console.log(createGrid(64));
+createGrid(100);
