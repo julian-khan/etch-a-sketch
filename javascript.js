@@ -48,11 +48,20 @@ function buttonClickHandler() {
     button.addEventListener('click', () => {
         const rowLength = prompt('Enter the desired number of squares per row');
         const cellCount = rowLength ** 2;
-        deleteGrid()''
+        deleteGrid();
         setGridWrapperSize(cellCount);
         createGrid(cellCount);
     });
 }
+
+function deleteGrid() {
+    const gridWrapper = document.querySelector('.grid-wrapper');
+    gridWrapper.innerHTML = '';
+      }
+
+
+
+
     
 
 //Main script
