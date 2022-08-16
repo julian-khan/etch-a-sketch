@@ -48,6 +48,11 @@ function buttonClickHandler() {
     button.addEventListener('click', () => { 
         const cellCount = prompt('Enter the desired number of squares per row') **2;
 
+        if (cellCount > 100**2 || cellCount < 1 || Math.floor(cellCount) !== cellCount) {
+            alert('Enter a positive number that is 100 or less');
+            return;
+        }
+
         deleteGrid();
         setGridWrapperSize(cellCount); 
         createGrid(cellCount);
@@ -60,10 +65,6 @@ function deleteGrid() {
     gridWrapper.innerHTML = '';
       }
 
-
-
-
-    
 
 //Main script
 setGridWrapperSize(256);
