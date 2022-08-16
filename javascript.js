@@ -45,11 +45,11 @@ function cellMouseoverHandler() {
 function buttonClickHandler() {
     const button = document.querySelector('.set-row-length');
 
-    button.addEventListener('click', () => {
-        const rowLength = prompt('Enter the desired number of squares per row');
-        const cellCount = rowLength ** 2;
+    button.addEventListener('click', () => { 
+        const cellCount = prompt('Enter the desired number of squares per row') **2;
+        
         deleteGrid();
-        setGridWrapperSize(cellCount);
+        setGridWrapperSize(cellCount); 
         createGrid(cellCount);
     });
 }
