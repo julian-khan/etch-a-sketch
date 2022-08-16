@@ -41,12 +41,26 @@ function cellMouseoverHandler() {
         });
     });
     }
+
+function buttonClickHandler() {
+    const button = document.querySelector('.set-row-length');
+
+    button.addEventListener('click', () => {
+        const rowLength = prompt('Enter the desired number of squares per row');
+        const cellCount = rowLength ** 2;
+        deleteGrid()''
+        setGridWrapperSize(cellCount);
+        createGrid(cellCount);
+    });
+}
     
 
 //Main script
 setGridWrapperSize(256);
 createGrid(256);
 cellMouseoverHandler();
+buttonClickHandler();
+
 
 
 
